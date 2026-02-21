@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const faqs = [
   { q: "ถ้าคอร์สไม่เสร็จจะได้เงินคืนไหม?", a: "ได้ 100% ภายใน 3 วันทำการ ถ้าไม่ถึง Threshold 20 คน ไม่มีความเสี่ยงใดๆ ทั้งสิ้น" },
@@ -14,11 +14,31 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".reveal");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
-      <div id="faq" className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
+    <section ref={sectionRef} className="relative py-24 bg-white overflow-hidden bg-dot-pattern-light">
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+      <div id="faq" className="relative max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">คำถามที่พบบ่อย</h2>
           <p className="text-gray-600 text-lg">มีข้อสงสัยอะไร เราตอบหมดครับ</p>
@@ -26,7 +46,7 @@ export default function FAQSection() {
 
         <div className="space-y-2">
           {faqs.map((faq, i) => (
-            <div key={i} className={`rounded-2xl border overflow-hidden transition-all ${
+            <div key={i} className={`rounded-2xl border overflow-hidden transition-all reveal reveal-delay-${(i % 4 + 1) * 100} ${
               openIndex === i ? "border-blue-500 bg-blue-50" : "border-gray-200 bg-white"
             }`}>
               <button

@@ -1,16 +1,37 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 const FOUNDER_COUNT = 7;
 const FOUNDER_MAX = 20;
 
 export default function PricingSection() {
   const pct = Math.round((FOUNDER_COUNT / FOUNDER_MAX) * 100);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".reveal");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
 
   return (
-    <section id="pricing" className="relative py-24 bg-[#0d1b3e] overflow-hidden">
+    <section id="pricing" ref={sectionRef} className="relative py-24 bg-[#0d1b3e] overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%)" }} />
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
+      <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-14 reveal">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">เลือกแพ็กเกจที่ใช่สำหรับคุณ</h2>
           <p className="text-slate-400 text-lg">จองตอนนี้ก่อนราคาขึ้น</p>
@@ -18,7 +39,7 @@ export default function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           {/* Founder Member Card */}
-          <div className="relative rounded-2xl border border-blue-500/40 bg-blue-500/10 p-8 flex flex-col">
+          <div className="relative rounded-2xl border border-blue-500/40 bg-blue-500/10 p-8 flex flex-col reveal reveal-delay-200">
             <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
               แนะนำ
             </div>
@@ -70,7 +91,7 @@ export default function PricingSection() {
           </div>
 
           {/* Early Bird Card */}
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-8 flex flex-col">
+          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-8 flex flex-col reveal reveal-delay-400">
             <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3">Early Bird</p>
             <div className="flex items-end gap-2 mb-1">
               <span className="text-5xl font-bold text-white">699</span>
@@ -110,7 +131,7 @@ export default function PricingSection() {
         </div>
 
         {/* Payment info */}
-        <div className="mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 max-w-2xl mx-auto text-center">
+        <div className="mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 max-w-2xl mx-auto text-center reveal reveal-delay-300">
           <div className="flex items-center justify-center gap-2 text-white font-semibold mb-2">
             <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />

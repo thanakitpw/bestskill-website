@@ -1,4 +1,25 @@
+import { useEffect, useRef } from "react";
+
 export default function OutcomesSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".reveal");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
   const outcomes = [
     { 
       icon: (
@@ -43,10 +64,11 @@ export default function OutcomesSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-gray-50 overflow-hidden">
+    <section id="outcomes" ref={sectionRef} className="relative py-24 bg-gray-50 overflow-hidden bg-grid-pattern-light">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 70%)" }} />
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Outcomes</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">ผลลัพธ์ที่ได้เมื่อจบคอร์ส</h2>
           <p className="text-gray-600 text-lg">สิ่งที่คุณจะทำได้จริงหลังเรียนจบ</p>
@@ -54,7 +76,7 @@ export default function OutcomesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {outcomes.map((item, i) => (
-            <div key={i} className={`rounded-2xl border border-gray-200 bg-white p-6 flex items-start gap-4 hover:border-blue-300 hover:shadow-md transition-all ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+            <div key={i} className={`rounded-2xl border border-gray-200 bg-white p-6 flex items-start gap-4 hover:border-blue-300 hover:shadow-md transition-all reveal reveal-delay-${(i % 3 + 1) * 100} ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
               <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
                 {item.icon}
               </div>
