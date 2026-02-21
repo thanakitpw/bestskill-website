@@ -33,12 +33,14 @@ export default function CountdownTimer() {
         { label: "นาที", value: timeLeft.minutes },
         { label: "วินาที", value: timeLeft.seconds },
       ].map((item, i) => (
-        <div key={i} className="flex items-center gap-2">
-          <div className="bg-white/[0.08] border border-white/10 rounded-xl px-4 py-3 text-center min-w-[64px]">
-            <div className="text-2xl font-bold text-white leading-none">{pad(item.value)}</div>
-            <div className="text-xs text-blue-200 mt-1">{item.label}</div>
+        <div key={i} className="flex items-center justify-center gap-2 sm:gap-4">
+          <div className="text-center">
+            <div className="bg-white border border-gray-200 rounded-xl p-3 sm:p-4 min-w-[60px] sm:min-w-[80px] shadow-sm">
+              <span className="text-2xl sm:text-3xl font-bold text-gray-900 block">{pad(item.value)}</span>
+              <span className="text-gray-600 text-xs uppercase tracking-wider">{item.label}</span>
+            </div>
           </div>
-          {i < 3 && <span className="text-white/70 text-xl font-bold">:</span>}
+          {i < 3 && <span className="text-gray-600 text-xl font-bold">:</span>}
         </div>
       ))}
     </div>

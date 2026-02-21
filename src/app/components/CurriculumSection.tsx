@@ -73,13 +73,12 @@ export default function CurriculumSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="curriculum" className="relative py-24 bg-[#0d1b3e] overflow-hidden">
-      <div className="absolute inset-0" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+    <section id="curriculum" className="relative py-24 bg-white overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Curriculum</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">คอร์สนี้สอนอะไรบ้าง?</h2>
-          <p className="text-slate-400 text-lg">~7.5 ชั่วโมง · 8 Parts · Workshop 3 โปรเจกต์จริง</p>
+          <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Curriculum</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">คอร์สนี้สอนอะไรบ้าง?</h2>
+          <p className="text-gray-600 text-lg">~7.5 ชั่วโมง · 8 Parts · Workshop 3 โปรเจกต์จริง</p>
         </div>
 
         <div className="space-y-2">
@@ -88,29 +87,29 @@ export default function CurriculumSection() {
               key={i}
               className={`rounded-2xl border overflow-hidden transition-all ${
                 part.highlight
-                  ? "border-blue-500/40 bg-blue-500/10"
-                  : "border-white/[0.08] bg-white/[0.04]"
+                  ? "border-blue-500 bg-blue-50"
+                  : "border-gray-200 bg-white"
               }`}
             >
               <button
-                className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-white/[0.03] transition-colors"
+                className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-gray-50 transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
                 <div className="flex items-center gap-3">
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
                     part.highlight
                       ? "bg-blue-500 text-white"
-                      : "bg-white/10 text-slate-400"
+                      : "bg-gray-100 text-gray-600"
                   }`}>
                     {part.tag}
                   </span>
                   <div>
-                    <p className="font-semibold text-white text-sm sm:text-base">{part.title}</p>
-                    <p className="text-slate-500 text-xs">{part.duration}</p>
+                    <span className="font-semibold text-gray-900 pr-4 text-sm sm:text-base">{part.title}</span>
+                    <p className="text-gray-500 text-xs">{part.duration}</p>
                   </div>
                 </div>
                 <svg
-                  className={`w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ${openIndex === i ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-500 transition-transform flex-shrink-0 ${openIndex === i ? "rotate-180" : ""}`}
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -118,12 +117,12 @@ export default function CurriculumSection() {
               </button>
 
               {openIndex === i && (
-                <div className="px-6 pb-5 border-t border-white/[0.06]">
-                  <p className="text-slate-400 text-sm mt-3 mb-3 italic">{part.desc}</p>
+                <div className="px-6 pb-5 border-t border-gray-200">
+                  <p className="text-gray-600 text-sm mt-3 mb-3 italic">{part.desc}</p>
                   <ul className="space-y-2">
                     {part.modules.map((m, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-slate-300">
-                        <svg className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
+                        <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {m}

@@ -16,35 +16,34 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-24 bg-[#0a1628] overflow-hidden">
-      <div className="absolute inset-0" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
-      <div id="faq" className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
+    <section className="relative py-24 bg-white overflow-hidden">
+      <div id="faq" className="max-w-3xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">คำถามที่พบบ่อย</h2>
-          <p className="text-slate-400 text-lg">มีข้อสงสัยอะไร เราตอบหมดครับ</p>
+          <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">คำถามที่พบบ่อย</h2>
+          <p className="text-gray-600 text-lg">มีข้อสงสัยอะไร เราตอบหมดครับ</p>
         </div>
 
         <div className="space-y-2">
           {faqs.map((faq, i) => (
             <div key={i} className={`rounded-2xl border overflow-hidden transition-all ${
-              openIndex === i ? "border-blue-500/40 bg-blue-500/10" : "border-white/[0.08] bg-white/[0.04]"
+              openIndex === i ? "border-blue-500 bg-blue-50" : "border-gray-200 bg-white"
             }`}>
               <button
-                className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-white/[0.03] transition-colors"
+                className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-gray-50 transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="font-semibold text-white pr-4 text-sm sm:text-base">{faq.q}</span>
+                <span className="font-semibold text-gray-900 pr-4 text-sm sm:text-base">{faq.q}</span>
                 <svg
-                  className={`w-5 h-5 text-slate-500 flex-shrink-0 transition-transform ${openIndex === i ? "rotate-180 text-blue-400" : ""}`}
+                  className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform ${openIndex === i ? "rotate-180 text-blue-600" : ""}`}
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {openIndex === i && (
-                <div className="px-6 pb-5 border-t border-white/[0.06]">
-                  <p className="text-slate-400 text-sm leading-relaxed mt-3">{faq.a}</p>
+                <div className="px-6 pb-5 border-t border-gray-200">
+                  <p className="text-gray-600 text-sm leading-relaxed mt-3">{faq.a}</p>
                 </div>
               )}
             </div>

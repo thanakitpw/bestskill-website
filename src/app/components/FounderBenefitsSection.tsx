@@ -57,26 +57,25 @@ export default function FounderBenefitsSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#0d1b3e] overflow-hidden">
-      <div className="absolute inset-0" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+    <section className="relative py-24 bg-white overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold px-4 py-1.5 rounded-full text-sm mb-4">
+          <div className="inline-flex items-center gap-2 bg-orange-100 border border-orange-300 text-orange-600 font-semibold px-4 py-1.5 rounded-full text-sm mb-4">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/>
             </svg>
             Founder Member เท่านั้น
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">สิ่งที่คุณได้พิเศษเมื่อจองตอนนี้</h2>
-          <p className="text-slate-400 text-lg">ทำไมถึงคุ้มกว่ารอซื้อทีหลัง</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">สิ่งที่คุณได้พิเศษเมื่อจองตอนนี้</h2>
+          <p className="text-gray-600 text-lg">ทำไมถึงคุ้มกว่ารอซื้อทีหลัง</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {benefits.map((b, i) => (
-            <div key={i} className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all">
+            <div key={i} className="rounded-2xl border border-gray-200 bg-white p-6 hover:border-blue-300 hover:shadow-md transition-all">
               <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">{b.icon}</div>
-              <h3 className="font-semibold text-white mb-2">{b.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{b.desc}</p>
+              <h3 className="font-semibold text-gray-900 mb-2">{b.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>

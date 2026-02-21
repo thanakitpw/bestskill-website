@@ -8,9 +8,8 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="relative py-24 bg-[#0d1b3e] overflow-hidden">
-      <div className="absolute inset-0" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%)" }} />
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">เลือกแพ็กเกจที่ใช่สำหรับคุณ</h2>
@@ -87,8 +86,8 @@ export default function PricingSection() {
                 "Community Group",
                 "อัปเดตฟรีตลอดชีพ",
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-slate-400 text-sm">
-                  <svg className="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
+                  <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {item}

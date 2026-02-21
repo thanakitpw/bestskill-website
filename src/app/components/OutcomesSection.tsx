@@ -43,23 +43,22 @@ export default function OutcomesSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#0a1628] overflow-hidden">
-      <div className="absolute inset-0" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
+    <section className="relative py-24 bg-gray-50 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 70%)" }} />
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Outcomes</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">ผลลัพธ์ที่ได้เมื่อจบคอร์ส</h2>
-          <p className="text-slate-400 text-lg">สิ่งที่คุณจะทำได้จริงหลังเรียนจบ</p>
+          <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Outcomes</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">ผลลัพธ์ที่ได้เมื่อจบคอร์ส</h2>
+          <p className="text-gray-600 text-lg">สิ่งที่คุณจะทำได้จริงหลังเรียนจบ</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {outcomes.map((item, i) => (
-            <div key={i} className={`rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 flex items-start gap-4 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+            <div key={i} className={`rounded-2xl border border-gray-200 bg-white p-6 flex items-start gap-4 hover:border-blue-300 hover:shadow-md transition-all ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
               <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
                 {item.icon}
               </div>
-              <p className="text-slate-300 text-sm font-medium leading-relaxed">{item.text}</p>
+              <p className="text-gray-700 text-sm font-medium leading-relaxed">{item.text}</p>
             </div>
           ))}
         </div>

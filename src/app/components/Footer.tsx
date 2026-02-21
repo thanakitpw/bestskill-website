@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative bg-[#060e1f] border-t border-white/[0.06] py-14">
+    <footer className="relative bg-gray-900 border-t border-gray-800 py-14">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
@@ -13,7 +13,7 @@ export default function Footer() {
               </div>
               <span className="text-white font-bold text-lg">Best Skill</span>
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               สอนสร้างเว็บด้วย AI ตั้งแต่ไอเดียจนใช้สร้างรายได้ได้จริง
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                 { label: "จองที่เรียน", href: "#pricing" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-slate-500 hover:text-white text-sm transition-colors">
+                  <a href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -45,29 +45,29 @@ export default function Footer() {
               href="https://line.me/ti/p/~@bestskill"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-slate-500 hover:text-white text-sm transition-colors mb-4"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors mb-4"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.066 1.636 5.793 4.181 7.548V22l3.808-2.09A11.3 11.3 0 0012 20.485c5.523 0 10-4.144 10-9.242S17.523 2 12 2z"/>
               </svg>
               Line OA: @bestskill
             </a>
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-4">
+            <div className="rounded-xl border border-gray-700 bg-gray-800 p-4">
               <div className="flex items-center gap-2 text-white text-xs font-semibold mb-1">
                 <svg className="w-3.5 h-3.5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                 </svg>
                 นโยบายการคืนเงิน
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">
+              <p className="text-gray-400 text-xs leading-relaxed">
                 ถ้าไม่ถึง Threshold 20 คน คืนเงิน 100% ภายใน 3 วันทำการ
               </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] pt-6 text-center">
-          <p className="text-slate-600 text-sm">© 2026 Best Skill · สงวนลิขสิทธิ์ทุกประการ</p>
+        <div className="border-t border-gray-800 pt-6 text-center">
+          <p className="text-gray-500 text-sm">© 2026 Best Skill · สงวนลิขสิทธิ์ทุกประการ</p>
         </div>
       </div>
     </footer>
