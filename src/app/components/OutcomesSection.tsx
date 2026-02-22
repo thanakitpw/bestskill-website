@@ -25,43 +25,51 @@ export default function OutcomesSection() {
   const outcomes = [
     { 
       icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ), 
       text: "มีเว็บจริงบน Internet อย่างน้อย 3 โปรเจกต์" 
     },
     { 
       icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0l2 2m-2-2v14a2 2 0 002 2H5a2 2 0 01-2-2V6m0 0l2-2m9 0h-2m-2 0v14a2 2 0 002 2h8a2 2 0 002-2V6m-2 0h-2" />
         </svg>
       ), 
-      text: "Prompt AI สร้างเว็บได้ทุกประเภท ไม่ใช่แค่ทำตาม" 
+      text: "Deploy จริงบน Vercel พร้อม domain" 
     },
     { 
       icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ), 
-      text: "Deploy เว็บขึ้น Vercel + เชื่อม Custom Domain ได้เอง" 
-    },
-    { 
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ), 
-      text: "ใช้ Git ปกป้องงาน และย้อนกลับเมื่อ AI ทำพังได้" 
-    },
-    { 
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ), 
-      text: "รับงาน Freelance ทำเว็บได้ในราคา 5,000–40,000 บาท" 
+      text: "รับงาน Freelance ทำเว็บได้ราคาหลักหมื่นถึงหลักแสน"
+    },
+    { 
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ), 
+      text: "เนื้อหาอัปเดตใหม่ตลอดชีพ ไม่มีค่าใช้จ่ายเพิ่ม" 
+    },
+    { 
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ), 
+      text: "ฟรี Prompt Template 15 แบบ สร้างเว็บไซต์ พร้อม copy-paste" 
+    },
+    { 
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9 9m0 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 9c-1.657 0-3-4.03-3-9s1.343-9 3-9m9 18a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 18a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9 3-9" />
+        </svg>
+      ), 
+      text: "สร้างเว็บได้ตั้งแต่ไอเดียจนออนไลน์ใน 1 วัน"
     },
   ];
 

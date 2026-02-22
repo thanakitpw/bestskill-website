@@ -1,9 +1,15 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import CountdownTimer from "./CountdownTimer";
+
+const EARLY_BIRD_COUNT = 6;
+const EARLY_BIRD_MAX = 20;
+const LAUNCH_DATE = "15 มีนาคม 2569";
 
 export default function PainPointsSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const pct = Math.round((EARLY_BIRD_COUNT / EARLY_BIRD_MAX) * 100);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,6 +71,100 @@ export default function PainPointsSection() {
     <section ref={sectionRef} className="relative py-24 bg-gray-50 overflow-hidden bg-grid-pattern-light">
       <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
+        {/* Early Bird Section */}
+        <div className="mb-14 reveal">
+          <div className="max-w-4xl mx-auto">
+            {/* Main urgency card */}
+            <div className="relative rounded-3xl bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 p-1 shadow-2xl">
+              <div className="bg-white rounded-3xl p-8">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 font-bold px-4 py-2 rounded-full text-sm mb-4">
+                    <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Early Bird รับเพียง 20 ที่เท่านั้น
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">ราคาพิเศษเพียง 699 บาท!</h3>
+                  <p className="text-gray-600">เหลือเพียง {EARLY_BIRD_MAX - EARLY_BIRD_COUNT} ที่สุดท้าย</p>
+                </div>
+
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Launch Date Section */}
+                  <div className="text-center">
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 border border-blue-200">
+                      <div className="flex items-center justify-center gap-2 mb-4">
+                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span className="text-blue-600 font-semibold text-sm">วันเปิดคอร์ส</span>
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900 mb-2">{LAUNCH_DATE}</div>
+                      <p className="text-gray-600 text-sm">คอร์สจะเริ่มเรียนจริง</p>
+                    </div>
+                  </div>
+
+                  {/* Seats Section */}
+                  <div className="text-center">
+                    <div className="bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl p-6 border border-orange-200">
+                      <div className="flex items-center justify-center gap-2 mb-4">
+                        <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/>
+                        </svg>
+                        <span className="text-orange-600 font-semibold text-sm">Early Bird ที่เหลือ</span>
+                      </div>
+                      
+                      {/* Progress visualization */}
+                      <div className="mb-4">
+                        <div className="flex justify-center gap-1 mb-3">
+                          {Array.from({ length: EARLY_BIRD_MAX }, (_, i) => (
+                            <div
+                              key={i}
+                              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                                i < EARLY_BIRD_COUNT
+                                  ? 'bg-red-500'
+                                  : 'bg-gray-300'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <div className="text-4xl font-bold text-gray-900 mb-1">
+                          {EARLY_BIRD_MAX - EARLY_BIRD_COUNT}
+                        </div>
+                        <div className="text-sm text-gray-600">ที่เท่านั้น</div>
+                      </div>
+                      
+                      {/* Progress bar */}
+                      <div className="w-full bg-gray-200 rounded-full h-3 mb-3">
+                        <div 
+                          className="h-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-500"
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {EARLY_BIRD_COUNT}/{EARLY_BIRD_MAX} คนจองแล้ว
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="text-center mt-8">
+                  <div className="inline-flex items-center gap-3 bg-red-50 border border-red-200 rounded-full px-6 py-3">
+                    <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                    <span className="text-red-600 font-semibold">
+                      หลังจากนี้ราคาจะเป็น <span className="text-2xl font-bold mx-1">899</span> บาท
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Pain Points</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">คุณเคยเจอแบบนี้ไหม?</h2>

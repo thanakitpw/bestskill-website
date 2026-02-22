@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
-const FOUNDER_COUNT = 7;
-const FOUNDER_MAX = 20;
+const EARLY_BIRD_COUNT = 6;
+const EARLY_BIRD_MAX = 20;
 
 export default function PricingSection() {
-  const pct = Math.round((FOUNDER_COUNT / FOUNDER_MAX) * 100);
+  const pct = Math.round((EARLY_BIRD_COUNT / EARLY_BIRD_MAX) * 100);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function PricingSection() {
         <div className="text-center mb-14 reveal">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Pricing</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">เลือกแพ็กเกจที่ใช่สำหรับคุณ</h2>
-          <p className="text-slate-400 text-lg">จองตอนนี้ก่อนราคาขึ้น</p>
+          <p className="text-slate-400 text-lg">Early Bird รับเพียง 20 ที่เท่านั้น</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
@@ -43,32 +43,31 @@ export default function PricingSection() {
             <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
               แนะนำ
             </div>
-            <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Founder Member</p>
+            <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Early Bird</p>
             <div className="flex items-end gap-2 mb-1">
-              <span className="text-5xl font-bold text-white">499</span>
+              <span className="text-5xl font-bold text-white">699</span>
               <span className="text-slate-400 text-lg mb-2">บาท</span>
             </div>
             <p className="text-slate-500 text-sm line-through mb-5">ราคาปกติ 899 บาท</p>
 
             <div className="bg-white/[0.06] rounded-xl p-4 mb-6">
-              <div className="flex justify-between text-sm mb-2">
-                <span className="text-slate-300 font-medium">ที่นั่งที่เหลือ</span>
-                <span className="text-blue-300 font-bold">{FOUNDER_COUNT}/{FOUNDER_MAX} คน</span>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white mb-2">เหลือเพียง 14 ที่สุดท้าย</div>
+                <div className="w-full bg-white/10 rounded-full h-2 mb-3">
+                  <div className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style={{ width: `${pct}%` }} />
+                </div>
+                <p className="text-slate-500 text-sm">ราคาขึ้นเป็น 899 บาท เมื่อครบ 20 ที่นั่ง</p>
               </div>
-              <div className="w-full bg-white/10 rounded-full h-1.5">
-                <div className="h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style={{ width: `${pct}%` }} />
-              </div>
-              <p className="text-slate-500 text-xs mt-2 text-center">เหลืออีก {FOUNDER_MAX - FOUNDER_COUNT} ที่เท่านั้น</p>
             </div>
 
             <ul className="space-y-2.5 mb-8 flex-1">
               {[
-                "คอร์สเต็ม ~7.5 ชั่วโมง",
+"คอร์สเต็ม 32 บทเรียน",
                 "Bonus PDF ทั้งหมด 7 ไฟล์",
-                "Private Founder Group",
+                "Private Community (Facebook/Discord)",
                 "Live Q&A พิเศษ 1 ครั้ง",
-                "ชื่อใน Wall of Founders",
-                "อัปเดตฟรีตลอดชีพ",
+                "Code Review ส่วนตัว",
+"อัปเดตเนื้อหาใหม่ตลอดชีพ",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
                   <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,25 +86,23 @@ export default function PricingSection() {
             >
               จองที่เรียนเลย →
             </a>
-            <p className="text-slate-500 text-xs text-center mt-3">คืนเงิน 100% ถ้าคอร์สไม่เปิดสอน</p>
           </div>
 
           {/* Early Bird Card */}
           <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-8 flex flex-col reveal reveal-delay-400">
-            <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3">Early Bird</p>
+            <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3">Normal Price</p>
             <div className="flex items-end gap-2 mb-1">
-              <span className="text-5xl font-bold text-white">699</span>
+              <span className="text-5xl font-bold text-white">899</span>
               <span className="text-slate-400 text-lg mb-2">บาท</span>
             </div>
-            <p className="text-slate-500 text-sm line-through mb-3">ราคาปกติ 899 บาท</p>
-            <p className="text-slate-500 text-sm mb-6">เปิดรับเมื่อ Founder Member ครบ 20 คน</p>
+            <p className="text-slate-500 text-sm mb-6">ราคาปกติ (เริ่ม 15 มีนาคม 2569)</p>
 
             <ul className="space-y-2.5 mb-8 flex-1">
               {[
-                "คอร์สเต็ม ~7.5 ชั่วโมง",
+"คอร์สเต็ม 32 บทเรียน",
                 "Bonus PDF ทั้งหมด 7 ไฟล์",
-                "Community Group",
-                "อัปเดตฟรีตลอดชีพ",
+                "Community Access",
+"อัปเดตเนื้อหาใหม่ตลอดชีพ",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
                   <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +111,7 @@ export default function PricingSection() {
                   {item}
                 </li>
               ))}
-              {["Private Founder Group", "Live Q&A พิเศษ", "ชื่อใน Wall of Founders"].map((item, i) => (
+              {["Private Community (Facebook/Discord)", "Live Q&A พิเศษ", "Code Review ส่วนตัว"].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-slate-600 text-sm line-through">
                   <svg className="w-4 h-4 text-slate-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -125,7 +122,7 @@ export default function PricingSection() {
             </ul>
 
             <div className="block w-full bg-white/5 border border-white/10 text-slate-500 font-bold py-3.5 rounded-xl text-center cursor-not-allowed">
-              เปิดรับเมื่อ Founder เต็ม
+              เปิดรับ 15 มีนาคม 2569
             </div>
           </div>
         </div>

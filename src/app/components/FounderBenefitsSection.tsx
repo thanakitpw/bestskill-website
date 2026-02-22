@@ -29,8 +29,8 @@ export default function FounderBenefitsSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       ), 
-      title: "ราคาถูกกว่าถาวร", 
-      desc: "499 บาท ตลอดชีพ ไม่ใช่แค่ช่วงเวลา (ราคาปกติ 899 บาท)" 
+      title: "ราคาถูกกว่าคุ้มกว่า", 
+      desc: "จ่ายครั้งเดียว 699 บาท เรียนได้ตลอดชีพ ไม่ต้องจ่ายค่าบำรุงรายเดือนหรือปี" 
     },
     { 
       icon: (
@@ -38,8 +38,8 @@ export default function FounderBenefitsSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ), 
-      title: "Private Group ก่อนใคร", 
-      desc: "เข้า Facebook / Discord Group พิเศษก่อน Launch" 
+      title: "Private Community พิเศษ", 
+      desc: "เข้า Private Community พิเศษได้ทันที" 
     },
     { 
       icon: (
@@ -65,8 +65,8 @@ export default function FounderBenefitsSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 01.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 01-.806 1.946 3.42 3.42 0 00-3.138 3.138 3.42 3.42 0 01-1.946.806 3.42 3.42 0 00-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 00-3.138-3.138 3.42 3.42 0 01-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 01.806-1.946 3.42 3.42 0 003.138-3.138z" />
         </svg>
       ), 
-      title: "Wall of Founders", 
-      desc: "ชื่อของคุณจะอยู่ใน Wall of Founders บนเว็บตลอดไป" 
+      title: "Code Review ส่วนตัว", 
+      desc: "ส่งโค้ดให้ผู้สอนตรวจสอบและให้คำแนะนำโดยตรง ช่วยปรับปรุงและแก้ไขปัญหาที่ติดอยู่" 
     },
     { 
       icon: (
@@ -74,8 +74,8 @@ export default function FounderBenefitsSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
       ), 
-      title: "อัปเดตฟรีตลอดชีพ", 
-      desc: "เนื้อหาอัปเดตตามเวอร์ชัน Windsurf ใหม่ ไม่มีค่าใช้จ่ายเพิ่ม" 
+      title: "อัปเดตเนื้อหาใหม่ตลอดชีพ", 
+      desc: "เนื้อหาใหม่อัปเดตตลอดชีพ ไม่มีค่าใช้จ่ายเพิ่ม" 
     },
   ];
 
@@ -88,7 +88,7 @@ export default function FounderBenefitsSection() {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/>
             </svg>
-            Founder Member เท่านั้น
+            Early Bird เท่านั้น
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">สิ่งที่คุณได้พิเศษเมื่อจองตอนนี้</h2>
           <p className="text-gray-600 text-lg">ทำไมถึงคุ้มกว่ารอซื้อทีหลัง</p>

@@ -98,7 +98,7 @@ export default function CurriculumSection() {
         <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Curriculum</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">คอร์สนี้สอนอะไรบ้าง?</h2>
-          <p className="text-gray-600 text-lg">~7.5 ชั่วโมง · 8 Parts · Workshop 3 โปรเจกต์จริง</p>
+          <p className="text-gray-600 text-lg">8 Parts · 32 บทเรียน · Workshop 3 โปรเจกต์จริง</p>
         </div>
 
         <div className="space-y-2">
