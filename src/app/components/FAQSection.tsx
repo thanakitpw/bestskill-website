@@ -6,9 +6,9 @@ const faqs = [
 { q: "คอร์สจะเริ่มเรียนเมื่อไร?", a: "วันที่ 15 มีนาคม 2569 คอร์สจะเริ่มเปิดให้เข้าเรียนจริง" },
   { q: "ไม่มีพื้นฐานโค้ดเลยเรียนได้ไหม?", a: "ได้เลย คอร์สออกแบบมาสำหรับมือใหม่ 100% ไม่ต้องรู้โค้ดมาก่อน เน้นสอน Process และ Prompt Engineering" },
   { q: "ต้องมีโปรแกรมอะไรบ้าง?", a: "Windsurf (ฟรี), Node.js (ฟรี), Git (ฟรี) — ทุกอย่างฟรีหมด ไม่มีค่าใช้จ่ายเพิ่ม" },
-  { q: "Early Bird จะปิดรับเมื่อไร?", a: "เมื่อครบ 20 คน จะปิดรับทันที และเปิดราคาปกติ 899 บาท ตั้งแต่ 15 มีนาคม 2569" },
+  { q: "Early Bird จะปิดรับเมื่อไร?", a: "เมื่อครบ 20 คน จะปิดรับทันที และเปิดราคาปกติ 1,299 บาท ตั้งแต่ 15 มีนาคม 2569" },
   { q: "เข้าเรียนได้นานแค่ไหน?", a: "ตลอดชีพ + อัปเดตเนื้อหาฟรีทุกครั้งที่ Windsurf มีการอัปเดต ไม่มีค่าใช้จ่ายเพิ่ม" },
-  { q: "มีถามผู้สอนได้ไหม?", a: "ได้ ผ่าน Private Group และ Q&A ในแต่ละบทเรียน ทีมผู้สอนจะตอบภายใน 24-48 ชั่วโมง" },
+  { q: "ถ้ามีคำถาม หรือสงสัย ทำอย่างไร?", a: "ถามได้ผ่าน Private Community และ Q&A ในแต่ละบทเรียน ทีมผู้สอนจะตอบภายใน 24-48 ชั่วโมง" },
 ];
 
 export default function FAQSection() {
@@ -34,8 +34,7 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-white overflow-hidden bg-dot-pattern-light">
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+    <section ref={sectionRef} className="relative py-24 bg-white overflow-hidden">
       <div id="faq" className="relative max-w-3xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">FAQ</p>

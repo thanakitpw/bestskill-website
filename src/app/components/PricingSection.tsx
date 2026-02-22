@@ -48,7 +48,7 @@ export default function PricingSection() {
               <span className="text-5xl font-bold text-white">699</span>
               <span className="text-slate-400 text-lg mb-2">บาท</span>
             </div>
-            <p className="text-slate-500 text-sm line-through mb-5">ราคาปกติ 899 บาท</p>
+            <p className="text-slate-500 text-sm line-through mb-5">ราคาปกติ 1,299 บาท</p>
 
             <div className="bg-white/[0.06] rounded-xl p-4 mb-6">
               <div className="text-center">
@@ -56,7 +56,7 @@ export default function PricingSection() {
                 <div className="w-full bg-white/10 rounded-full h-2 mb-3">
                   <div className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style={{ width: `${pct}%` }} />
                 </div>
-                <p className="text-slate-500 text-sm">ราคาขึ้นเป็น 899 บาท เมื่อครบ 20 ที่นั่ง</p>
+                <p className="text-slate-500 text-sm">ราคาขึ้นเป็น 1,299 บาท เมื่อครบ 20 ที่นั่ง</p>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default function PricingSection() {
           <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-8 flex flex-col reveal reveal-delay-400">
             <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-3">Normal Price</p>
             <div className="flex items-end gap-2 mb-1">
-              <span className="text-5xl font-bold text-white">899</span>
+              <span className="text-5xl font-bold text-white">1,299</span>
               <span className="text-slate-400 text-lg mb-2">บาท</span>
             </div>
             <p className="text-slate-500 text-sm mb-6">ราคาปกติ (เริ่ม 15 มีนาคม 2569)</p>

@@ -74,9 +74,7 @@ export default function OutcomesSection() {
   ];
 
   return (
-    <section id="outcomes" ref={sectionRef} className="relative py-24 bg-gray-50 overflow-hidden bg-grid-pattern-light">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 70%)" }} />
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
+    <section id="outcomes" ref={sectionRef} className="relative py-24 bg-white overflow-hidden">
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Outcomes</p>

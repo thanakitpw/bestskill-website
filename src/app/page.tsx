@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import PainPointsSection from "./components/PainPointsSection";
 import CurriculumSection from "./components/CurriculumSection";
+import TargetAudienceSection from "./components/TargetAudienceSection";
 import OutcomesSection from "./components/OutcomesSection";
 import FounderBenefitsSection from "./components/FounderBenefitsSection";
 import FAQSection from "./components/FAQSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <PainPointsSection />
       <CurriculumSection />
+      <TargetAudienceSection />
       <OutcomesSection />
       <FounderBenefitsSection />
       <FAQSection />

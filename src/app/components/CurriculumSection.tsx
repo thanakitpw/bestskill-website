@@ -92,8 +92,7 @@ export default function CurriculumSection() {
   }, []);
 
   return (
-    <section id="curriculum" ref={sectionRef} className="relative py-24 bg-white overflow-hidden bg-dot-pattern-light">
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+    <section id="curriculum" ref={sectionRef} className="relative py-24 bg-[#f5f7ff] overflow-hidden">
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14 reveal">
           <p className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Curriculum</p>

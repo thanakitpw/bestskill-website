@@ -80,8 +80,7 @@ export default function FounderBenefitsSection() {
   ];
 
   return (
-    <section id="benefits" ref={sectionRef} className="relative py-24 bg-white overflow-hidden bg-dot-pattern-light">
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+    <section id="benefits" ref={sectionRef} className="relative py-24 bg-[#f5f7ff] overflow-hidden">
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14 reveal">
           <div className="inline-flex items-center gap-2 bg-orange-100 border border-orange-300 text-orange-600 font-semibold px-4 py-1.5 rounded-full text-sm mb-4">

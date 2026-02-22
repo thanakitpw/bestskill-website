@@ -68,8 +68,7 @@ export default function PainPointsSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-gray-50 overflow-hidden bg-grid-pattern-light">
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
+    <section ref={sectionRef} className="relative py-24 bg-white overflow-hidden">
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
         {/* Early Bird Section */}
         <div className="mb-14 reveal">
@@ -156,7 +155,7 @@ export default function PainPointsSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                     <span className="text-red-600 font-semibold">
-                      หลังจากนี้ราคาจะเป็น <span className="text-2xl font-bold mx-1">899</span> บาท
+                      หลังจากนี้ราคาจะเป็น <span className="text-2xl font-bold mx-1">1,299</span> บาท
                     </span>
                   </div>
                 </div>
